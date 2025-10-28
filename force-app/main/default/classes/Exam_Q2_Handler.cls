@@ -1,5 +1,5 @@
 public class Exam_Q2_Handler {
-    //  
+    //  add commint//
     public static void checkEmail(list<contact>conList){
       set<id> accids = new set<id>();
         for(contact con : conList){
