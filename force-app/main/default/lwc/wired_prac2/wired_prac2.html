@@ -1,0 +1,19 @@
+<template>
+   <lightning-card title="CaseRecods" icon-name="standard:case">
+   <template if:true={csData}> 
+       <template for:each={csData} for:item="csId">
+        <div class="slds-box " key={csId.Id}> 
+       <p>Case id : {csId.Id}</p> 
+       <p>Account id : {csId.AccountId}</p> 
+       <p>Contact id : {csId.ContactId}</p> 
+    </div>
+    </template>
+  </template>
+    <template if:true={csError}> 
+    <div class="slds-box ">
+       <p>Error Occurs : {csError.body.message}</p> 
+    
+    </div>
+    </template>
+   </lightning-card> 
+</template>

@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title ="Subcriber Section">
+        <lightning-input label="Enter FristName" onchange={handleAll} name="cfname" value={formData.cfname}></lightning-input>
+        <lightning-input label="Enter LastName" onchange={handleAll} name="clname" value={formData.clname}></lightning-input>
+        <lightning-input label="Enter Age" onchange={handleAll} name="cAge" value={formData.cAge}></lightning-input>
+        <lightning-input label="Enter City" onchange={handleAll} name="cCity" value={formData.cCity}></lightning-input>
+        <lightning-button label="Submit" variant="brand" onclick={subme}></lightning-button>
+        <lightning-button label="Clear" variant="destructive" onclick={clearMe}></lightning-button>
+    </lightning-card>
+</template>

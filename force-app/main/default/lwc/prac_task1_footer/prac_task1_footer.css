@@ -1,0 +1,37 @@
+.page-footer {
+    background: #002b6c;         /* dark blue footer */
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+.page-footer .footer {
+    display: flex;
+    justify-content: left;
+    gap: 2rem;                   /* spacing between items */
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.page-footer .footer p {
+    margin: 0;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.page-footer .footer p:hover {
+    text-decoration: underline;  /* slight hover effect like websites */
+}
+
+.page-footer .small {
+   justify-content: left;
+    display: flex;
+    align-items: left;
+    font-size: 0.75rem;
+    opacity: 0.85;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.4rem;
+}

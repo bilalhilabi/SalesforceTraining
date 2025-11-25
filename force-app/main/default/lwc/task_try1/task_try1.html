@@ -1,0 +1,20 @@
+<template>
+  <lightning-card title="Task 1 Practice" icon-name="Standard:contact">
+    <div class="slds-grid slds-gutters slds-wrap">
+      <div class="slds-col slds-size_1-of-2">  
+      <lightning-input label="First Name" onchange={hanFirName}></lightning-input> 
+      </div>   
+       <div class="slds-col slds-size_1-of-2">  
+      <lightning-input label="Last Name" onchange={hanLasName}></lightning-input> 
+       </div>
+      <div class="slds-col slds-size_1-of-2">  
+       <lightning-input label="Phone " onchange={hanPhn}></lightning-input>
+      </div>
+    <div class="slds-col slds-size_1-of-2">  
+     <lightning-input label="Email" onchange={hanEml}></lightning-input>
+    </div>
+     </div>
+    <lightning-button label="Submit" variant="brand" onclick={hanSub}></lightning-button>
+    <lightning-button label="Clear" variant="Distructive" onclick={hanClear}></lightning-button>
+  </lightning-card>  
+</template>

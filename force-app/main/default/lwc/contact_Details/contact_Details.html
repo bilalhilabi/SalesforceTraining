@@ -1,0 +1,10 @@
+<template>
+<lightning-card title = "Task by Sharavan" icon-name ="standard:account">
+ <template for:each={consave.data} for:item="cond">
+<div key={cond.Id}>
+ <p>Contact Name: {cond.LastName}</p>
+<p>Contact Email: {cond.Email}</p>
+ </div>
+ </template>   
+</lightning-card>
+</template>

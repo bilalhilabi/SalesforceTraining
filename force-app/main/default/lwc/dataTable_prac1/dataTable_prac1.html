@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Simple Data Table">
+        <lightning-datatable
+            key-field="id"
+            data={visibleRecords}
+            columns={columns}>
+        </lightning-datatable>
+         <!-- Pagination Buttons -->
+        <div class="slds-m-top_small slds-align_absolute-center">
+            <lightning-button 
+                label="Previous" 
+                onclick={handlePrev} 
+                disabled={isPrevDisabled}>
+            </lightning-button>
+
+            <lightning-button 
+                class="slds-m-left_small"
+                label="Next" 
+                onclick={handleNext} 
+                disabled={isNextDisabled}>
+            </lightning-button>
+        </div>
+         <span class="slds-m-left_small slds-text-body_small">
+                Page {page} of {totalPages}
+            </span>
+            <template if:true={merror}>
+      <p class="slds-text-color_error">{merror}</p>
+    </template>
+    </lightning-card>
+</template>

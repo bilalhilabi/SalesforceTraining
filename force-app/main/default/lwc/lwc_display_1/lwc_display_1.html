@@ -1,0 +1,10 @@
+<template>
+ <lightning-card title="Parent Component Display">
+   <c-lwc_subcriber_1 onevnchild={showDetail} onenvclear={clearshow}></c-lwc_subcriber_1> 
+   <p>FirstName : {childData.pfname} </p>
+   <p>LastName : {childData.plname}</p>
+   <p>Age : {childData.pAge}</p>
+   <p>City :{childData.pcity}</p>
+  <lightning-button label="Create Contact" variant="brand" icon-name="standard:contact" onclick={sendData}></lightning-button> 
+ </lightning-card>   
+</template>

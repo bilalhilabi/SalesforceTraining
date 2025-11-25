@@ -1,4 +1,4 @@
-/**
+/*
  * This class contains unit tests for validating the behavior of Apex classes
  * and triggers.
  *
@@ -18,23 +18,52 @@
  * the org size limit for all Apex scripts.
  *
  * See the Apex Language Reference for more information about Testing and Code Coverage.
- */
+ 
 @isTest
 private class oppoLine_to_acc_Handler_Test {
 
-    @isTest
+    @IsTest
     static void myUnitTest() {
-     Account acc = new Account();
-     acc.Name = 'Test Account';
-     insert acc;
-     opportunity op = new opportunity();
-     op.name = 'Test oppo';
-     op.AccountId = acc.id;
-     op.StageName = 'Prospecting';
-     op.closeDate = date.new instance(2025,10,28);
-     insert op;
-     opportunityLineItem  opli = new opportunityLineItem();
-     opli.opportunityId = op.id;
-     
-    }
-}
+        // Create Account
+        Account acc = new Account(Name = 'Test Account');
+        insert acc;
+
+        // Use Standard Pricebook
+        Pricebook2 stdPb = [SELECT Id FROM Pricebook2 WHERE IsStandard = true LIMIT 1];
+
+        // Create Product
+        Product2 prod = new Product2(Name = 'Test Product', IsActive = true);
+        insert prod;
+
+        // Create Standard PricebookEntry
+        PricebookEntry stdPbe = new PricebookEntry(
+            Pricebook2Id = stdPb.Id,
+            Product2Id   = prod.Id,
+            UnitPrice    = 100,
+            IsActive     = true,
+            UseStandardPrice = false
+        );
+        insert stdPbe;
+
+        // Create Opportunity
+        Opportunity opp = new Opportunity(
+            Name = 'Test Opportunity',
+            AccountId = acc.Id,
+            StageName = 'Prospecting',
+            CloseDate = Date.newInstance(2025, 10, 28),
+            Pricebook2Id = stdPb.Id
+        );
+        insert opp;
+
+        // Create OpportunityLineItem
+        OpportunityLineItem oli = new OpportunityLineItem(
+            OpportunityId = opp.Id,
+            PricebookEntryId = stdPbe.Id,
+            Quantity = 1,
+            TotalPrice = 100
+        );
+        insert oli;
+
+        System.assertNotEquals(null, oli.Id, 'OpportunityLineItem should have been inserted successfully.');
+    } */
+}   

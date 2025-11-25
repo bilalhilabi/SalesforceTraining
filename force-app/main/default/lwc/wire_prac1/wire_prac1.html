@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="WIRE METHOD PRACTICE " icon-name="standard:account" >
+       <!---- <template for:each ={allCasesRec.data} for:item="cc" for:index="index" >
+          <div class="slds-box slds-p-around_small slds-m-bottom_medium" key={cc.id} >
+           <p>Sr no : {index}</p><br/>
+           <p>CaseNumber : {cc.CaseNumber}</p> <br/>
+           <p>Subject : {cc.Subject}</p><br/>
+           <p>AccountId : {cc.AccountId}</p><br/>
+           <p>Contact : {cc.ContactId}</p>
+          </div>  
+        </template> -->
+       <template if:true={capData}>
+        <template for:each={capData} for:item="cc" for:index="index">
+          <div class="slds-box slds-p-around_small slds-m-bottom_medium" key={cc.id} >
+           <p>Sr no : {index}</p><br/>
+           <p>CaseNumber : {cc.CaseNumber}</p> <br/>
+           <p>Subject : {cc.Subject}</p><br/>
+           <p>AccountId : {cc.AccountId}</p><br/>
+           <p>Contact : {cc.ContactId}</p>
+          </div>  
+        </template>
+       </template>
+       <template if:true={capError}>
+        <p>Error occurs + {capError.body.message}</p>
+       </template>
+    </lightning-card>
+</template>
